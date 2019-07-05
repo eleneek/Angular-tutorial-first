@@ -24,5 +24,12 @@ export class CartService {
     clearCart() {
         this.items = [];
         return this.items;
-      }
+    }
+    remove(id) {
+        this.items.splice(id, 1);
+        return this.items;
+    }
+    check(product) {
+        return this.items.includes(product);
+    }
 }
