@@ -14,7 +14,7 @@
 <form [formGroup] = 'checkoutForm' (ngSubmit) = 'onSubmit(checkoutForm.value)'>
     <div>
         <label>Name</label>
-        <input type="text" formControlName = 'name'>
+        <input type="text" formControlName = 'name' required>
     </div>
     <div formGroupName='address'>
         <h3>Address</h3>
@@ -46,4 +46,7 @@
     <h3>Customer</h3>
     <p>Name: {{checkoutForm.controls.name.value}}</p>
     <p>Address: {{checkoutForm.controls.address.value | json }}</p>
+    <p>
+        Form Status: {{checkoutForm.status}}
+    </p>
 </div>
