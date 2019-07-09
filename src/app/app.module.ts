@@ -41,8 +41,7 @@ import { UsersComponent } from './users/users.component';
       {path: 'shipping', component: ShippingComponent},
       { path: 'wishlist', component: WishlistComponent },
       {path: 'register', component: RegisterComponent},
-      {path: 'users', component: UsersComponent}
-
+      {path: 'users', component: UsersComponent},
 
     ])
   ],

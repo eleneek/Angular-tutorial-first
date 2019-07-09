@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(user){
-    if(!confirm(`You sure you want to remove ${this.users}?`)) {
+    if (!confirm(`You sure you want to remove ${user.email}?`)) {
       return true;
     }
     this.registerService.deleteUser(user);
