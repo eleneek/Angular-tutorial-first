@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  users = this.registerService.getusers();
 
-  constructor() { }
+  constructor(
+    private registerService: RegisterService
+    ) {
+      this.users = this.registerService.getusers();
+     }
 
   ngOnInit() {
+  }
+
+  deleteUser(user){
+    if(!confirm(`You sure you want to remove ${this.users}?`)) {
+      return true;
+    }
+    this.registerService.deleteUser(user);
   }
 
 }

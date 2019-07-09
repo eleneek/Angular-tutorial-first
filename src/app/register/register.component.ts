@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { RegisterService } from '../register.service';
 import {
   FormBuilder,
@@ -10,7 +10,7 @@ import {
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  clicked = false;
   registrationForm;
 
   constructor(
@@ -48,5 +48,14 @@ export class RegisterComponent implements OnInit {
 
   get disabled() {
     return this.registrationForm.invalid;
+  }
+
+  saveUsers() {
+    this.registerService.addUsers(this.registrationForm.value);
+    this.clicked = true;
+  }
+
+  check(user) {
+    return this.registerService.check(user);
   }
 }

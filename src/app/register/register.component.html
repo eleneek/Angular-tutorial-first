@@ -93,6 +93,6 @@
             </div>
         </div>
 
-        <input type="submit" class="button fancy-button" [disabled]="disabled" value="Register">
+        <input type="submit" [disabled]='clicked' (click)="saveUsers()"  class="button fancy-button"  [disabled]="disabled" value="Register">
     </form>
 </div>
