@@ -1,0 +1,22 @@
+<h1>Exchange</h1>
+<form [formGroup]="currencyConverter">
+    <div class="main">
+        <div class="dropdown ">
+            <button class="currencyBtn">{{fromCurrency}}</button>
+            <div class="dropdown-inner child">
+                <a  *ngFor="let currency of currencies" (click)="setfromCurrency(currency)">{{currency}}</a>
+            </div>
+        </div>
+        <input type="number" formControlName="firstRate" value="{{getInput()}}">
+    </div>
+    <div class="container">
+        <div  class="dropdown ">
+            <button class="currencyBtn">{{toCurrency}}</button>
+            <div class="dropdown-inner child">
+                <a *ngFor="let currency of currencies" (click)="settoCurrency(currency)">{{currency}}</a>
+            </div>
+        </div>
+        <input formControlName="secondRate" type="number" value="{{getOutput()}}">
+    </div>
+</form>
+<div *ngIf="currencyConverter.status !== 'VALID'"><h3>Input should be Greater than 0!</h3></div>

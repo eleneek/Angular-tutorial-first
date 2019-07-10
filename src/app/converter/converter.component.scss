@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    
+    .main {
+        display: flex;
+    }
+
+    input {
+        margin-left: 10px;
+        height: 65px;
+        font-size: 20px;
+    }
+    .currencyBtn {
+        cursor: pointer;
+    }
+    
+    .dropdown {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .dropdown-inner {
+        display: none;
+        width: 100%;
+    }
+    .dropdown-inner a {
+        color: black;
+        padding: 7px;
+        text-decoration: none;
+        display: block;
+    
+    }
+    .child {
+        display: block;
+    }
+
+}

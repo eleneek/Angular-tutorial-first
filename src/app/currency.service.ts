@@ -22,11 +22,10 @@ export class CurrencyService {
       const size = this.currencies.length;
       from(this.currencies).subscribe((currency) => {
         const url = `https://api.exchangeratesapi.io/latest?symbols=${currency}`;
-
         this.httpClient.get(url).subscribe((value) => {
           i++;
           subscriber.next(value);
-          if(i === size) {
+          if (i === size) {
             subscriber.complete();
           }
         } );

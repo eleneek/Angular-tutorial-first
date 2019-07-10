@@ -16,6 +16,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { CurrencyComponent } from './currency/currency.component';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CurrencyComponent } from './currency/currency.component';
     RegisterComponent,
     UsersComponent,
     CurrencyComponent,
+    ConverterComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,8 @@ import { CurrencyComponent } from './currency/currency.component';
       {path: 'register', component: RegisterComponent},
       {path: 'users', component: UsersComponent},
       {path: 'currency', component: CurrencyComponent},
+      {path: 'converter', component: ConverterComponent},
+      { path: 'currency-converter', component: ConverterComponent}
 
     ])
   ],
