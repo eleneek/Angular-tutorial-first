@@ -53,7 +53,7 @@ import { ShippingService } from './shipping.service';
 
     ])
   ],
-  providers: [ShippingService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
