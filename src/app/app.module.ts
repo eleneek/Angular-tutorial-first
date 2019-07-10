@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { CurrencyComponent } from './currency/currency.component';
 import { ConverterComponent } from './converter/converter.component';
+import { ShippingService } from './shipping.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { ConverterComponent } from './converter/converter.component';
 
     ])
   ],
-  providers: [],
+  providers: [ShippingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
