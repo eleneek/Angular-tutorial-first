@@ -21,6 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsComponent } from './news/news.component';
 import { ArticleComponent } from './article/article.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AdminComponent } from './admin/admin.component';
+import { GuardComponent } from './guard/guard.component';
+import {AuthGuard} from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     NewsComponent,
     ArticleComponent,
     ErrorPageComponent,
+    AdminComponent,
+    GuardComponent,
 
   ],
   imports: [
@@ -63,6 +68,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
       {path: 'dashboard/news', data: {name: 'News'}, component: NewsComponent},
       {path: 'dashboard/news/:articleId', data: {name: 'Article'}, component: ArticleComponent},
       {path: 'error', data: {name: 'Error'}, component: ErrorPageComponent},
+      {path: 'admin', data: {name: 'Admin'}, canActivate: [AuthGuard], component: AdminComponent},
+      {path: 'guard', data: {name: 'Guard'}, component: GuardComponent},
 
     ])
   ],
