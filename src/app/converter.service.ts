@@ -13,7 +13,7 @@ export class ConverterService {
   Observer;
   rate;
   toCurrency;
-
+  rates = [];
   constructor(
     private httpClient: HttpClient
     ) {

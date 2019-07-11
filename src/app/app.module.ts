@@ -17,6 +17,10 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { CurrencyComponent } from './currency/currency.component';
 import { ConverterComponent } from './converter/converter.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewsComponent } from './news/news.component';
+import { ArticleComponent } from './article/article.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,11 @@ import { ConverterComponent } from './converter/converter.component';
     UsersComponent,
     CurrencyComponent,
     ConverterComponent,
+    DashboardComponent,
+    NewsComponent,
+    ArticleComponent,
+    ErrorPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +58,11 @@ import { ConverterComponent } from './converter/converter.component';
       {path: 'users', component: UsersComponent},
       {path: 'currency', component: CurrencyComponent},
       {path: 'converter', component: ConverterComponent},
-      { path: 'currency-converter', component: ConverterComponent}
+      { path: 'currency-converter', component: ConverterComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'dashboard/news', component: NewsComponent},
+      {path: 'dashboard/news/:articleId', component: ArticleComponent},
+      {path: 'error', component: ErrorPageComponent},
 
     ])
   ],
