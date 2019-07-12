@@ -14,7 +14,8 @@ export class EmployeeRegisterComponent implements OnInit {
   employeesRegister;
 
   constructor(
-    private employeesService: EmployeesService, private formBuilder: FormBuilder,
+    private employeesService: EmployeesService,
+    private formBuilder: FormBuilder,
     private router: Router,
   ) {
     this.employeesRegister = formBuilder.group({

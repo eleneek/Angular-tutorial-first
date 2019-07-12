@@ -1,10 +1,19 @@
 <h1>Employee</h1>
 
-<div>
-  <p>ID: {{currentEmployee?.id}}</p>
-  <p>Name: {{currentEmployee?.name}}</p>
-  <p>Salary: {{currentEmployee?.salary}}</p>
-  <p>Age: {{currentEmployee?.age}}</p>
-</div>
+<form [formGroup]="employeesUpdate">
+  <label> ID:
+    <input  type="text" formControlName="id" disabled>
+  </label>
+  <label> Name:
+    <input  type="text" formControlName="name">
+  </label>
+  <label> Salary:
+    <input  type="text" formControlName="salary">
+  </label>
+  <label> Age:
+    <input type="text" formControlName="age">
+  </label>
+</form>
 <button (click)="delete()">Delete</button>
+<button (click)="update()">Update</button>
 
