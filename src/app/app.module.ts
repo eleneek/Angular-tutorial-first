@@ -27,6 +27,7 @@ import {AuthGuard} from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import {LoginGuard} from './login.guard';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import {LoginGuard} from './login.guard';
     AdminComponent,
     GuardComponent,
     LoginComponent,
+
 
   ],
   imports: [

@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {RegisterService} from '../register.service';
 import {LoginService} from '../login.service';
 import {Router} from '@angular/router';
 
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -42,6 +45,10 @@ export class LoginComponent implements OnInit {
   allEmails() {
     this.emails.push( this.Email.value);
     return this.emails;
+  }
+  loggedInUser() {
+    const email = this.Email.value;
+    return email;
   }
 
   checkAuthentication() {

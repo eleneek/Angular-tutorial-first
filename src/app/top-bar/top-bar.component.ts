@@ -20,6 +20,6 @@ export class TopBarComponent implements OnInit {
     }
 
     logout() {
-      return this.loginService.blockAccess();
+      return this.loginService.isUserAuthenticated();
     }
 }

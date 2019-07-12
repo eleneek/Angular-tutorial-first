@@ -5,8 +5,8 @@
     <p> <span>Phone: </span> {{user.phone}}</p>
     <p> <span>Website: </span> {{user.website}}</p>
     <p> <span>Password: </span> {{user.password}}</p>
-    <div> 
-        <button (click)="deleteUser(user)" class="button fancy-button ">
+    <div>
+        <button   *ngIf="mail2 === mail" (click)="deleteUser(user)" class="button fancy-button ">
             <i class="material-icons">delete</i>
             Delete user
         </button>
