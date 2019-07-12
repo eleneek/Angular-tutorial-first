@@ -85,7 +85,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
       {path: 'login', data: {name: 'Login'}, component: LoginComponent},
       {path: 'employees', data: {name: 'Employees'}, component: EmployeesComponent},
       {path: 'employee/register', data: {name: 'EmployeeRegister'}, component: EmployeeRegisterComponent},
-      {path: 'employee/:employeeId', data: {name: 'Article'}, component: ArticleComponent},
+      {path: 'employee/:employeeId', data: {name: 'Employee'}, component: EmployeeComponent},
 
 
     ])

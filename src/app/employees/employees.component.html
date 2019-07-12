@@ -11,7 +11,7 @@
   <tbody>
   <tr *ngFor="let employee of employees$ | async | paginate: { itemsPerPage: 10, currentPage: p }">
       <td>{{employee.id}}</td>
-      <td>{{employee.name}}</td>
+      <td> <a [routerLink]="[ '/employee', employee.id ]">{{employee.name}}</a></td>
       <td>{{employee.salary}}</td>
       <td>{{employee.age}}</td>
   </tr>

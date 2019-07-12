@@ -1,6 +1,10 @@
 <h1>Employee</h1>
-<ul>
-  <li *ngFor="let employee of employees">
-    <p> {{employee}}</p>
-  </li>
+
+<div>
+  <p>ID: {{currentEmployee?.id}}</p>
+  <p>Name: {{currentEmployee?.name}}</p>
+  <p>Salary: {{currentEmployee?.salary}}</p>
+  <p>Age: {{currentEmployee?.age}}</p>
+</div>
+<button (click)="delete()">Delete</button>
 

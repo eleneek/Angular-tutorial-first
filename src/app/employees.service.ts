@@ -40,4 +40,24 @@ export class EmployeesService {
     const url = `${this.host}/create`;
     return this.httpClient.post<IEmployee>(url, Employee);
   }
+
+  getEmployeeByID(userId) {
+    return this.httpClient.get(`${this.host}/employee/${userId}`).pipe(map((employee: IEmployee) => {
+
+      const { id, employee_name, employee_salary, employee_age } = employee;
+
+      return {
+        id,
+        name: employee_name,
+        salary: employee_salary,
+        age: employee_age
+      };
+
+    }));
+  }
+
+  delete(employee) {
+    const url = `${this.host}/delete/${employee.id}`;
+    return this.httpClient.delete(url, employee);
+  }
 }
