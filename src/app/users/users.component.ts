@@ -12,6 +12,7 @@ import {LoginService} from '../login.service';
 export class UsersComponent implements OnInit {
   users = this.registerService.getusers();
   mail = this.loginComponent.Email.value;
+  paddword = this.loginComponent.Password.value;
   mail2 = '';
   constructor(
     private loginService: LoginService,

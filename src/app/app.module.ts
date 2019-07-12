@@ -26,6 +26,7 @@ import { GuardComponent } from './guard/guard.component';
 import {AuthGuard} from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import {LoginGuard} from './login.guard';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import {LoginGuard} from './login.guard';
     AdminComponent,
     GuardComponent,
     LoginComponent,
+    EmployeesComponent,
 
 
   ],
@@ -75,6 +77,7 @@ import {LoginGuard} from './login.guard';
       {path: 'error', data: {name: 'Error'}, component: ErrorPageComponent},
       {path: 'admin', data: {name: 'Admin'}, canActivate: [AuthGuard], component: AdminComponent},
       {path: 'login', data: {name: 'Login'}, component: LoginComponent},
+      {path: 'employees', data: {name: 'Employees'}, component: EmployeesComponent},
 
     ])
   ],
