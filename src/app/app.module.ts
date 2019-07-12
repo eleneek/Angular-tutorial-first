@@ -24,6 +24,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AdminComponent } from './admin/admin.component';
 import { GuardComponent } from './guard/guard.component';
 import {AuthGuard} from './auth.guard';
+import { LoginComponent } from './login/login.component';
+import {LoginGuard} from './login.guard';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import {AuthGuard} from './auth.guard';
     ErrorPageComponent,
     AdminComponent,
     GuardComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -58,18 +61,18 @@ import {AuthGuard} from './auth.guard';
       {path: 'products/:productId',  data: {name: 'Product'}, component: ProductDetailsComponent},
       {path: 'cart', data: {name: 'Cart'}, component: CartComponent},
       {path: 'shipping', data: {name: 'Shipping'}, component: ShippingComponent},
-      { path: 'wishlist', component: WishlistComponent },
-      {path: 'register', component: RegisterComponent},
-      {path: 'users', component: UsersComponent},
+      { path: 'wishlist',  data: {name: ' Wishlist'}, component: WishlistComponent },
+      {path: 'register',  data: {name: 'Register'}, component: RegisterComponent},
+      {path: 'users', data: {name: 'Users'}, canActivate: [LoginGuard], component: UsersComponent},
       {path: 'currency', data: {name: 'Currency'}, component: CurrencyComponent},
-      {path: 'converter', component: ConverterComponent},
-      { path: 'currency-converter', component: ConverterComponent},
+      {path: 'converter',  data: {name: 'Converter'}, component: ConverterComponent},
+      { path: 'currency-converter',  data: {name: 'Converter'}, component: ConverterComponent},
       {path: 'dashboard', data: {name: 'Dashboard'}, component: DashboardComponent},
       {path: 'dashboard/news', data: {name: 'News'}, component: NewsComponent},
       {path: 'dashboard/news/:articleId', data: {name: 'Article'}, component: ArticleComponent},
       {path: 'error', data: {name: 'Error'}, component: ErrorPageComponent},
       {path: 'admin', data: {name: 'Admin'}, canActivate: [AuthGuard], component: AdminComponent},
-      {path: 'guard', data: {name: 'Guard'}, component: GuardComponent},
+      {path: 'login', data: {name: 'Login'}, component: LoginComponent},
 
     ])
   ],

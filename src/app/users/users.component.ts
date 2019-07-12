@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { RegisterService } from '../register.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +11,8 @@ export class UsersComponent implements OnInit {
   users = this.registerService.getusers();
 
   constructor(
-    private registerService: RegisterService
+    private router: Router,
+    private registerService: RegisterService,
     ) {
       this.users = this.registerService.getusers();
      }
@@ -18,11 +20,14 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteUser(user){
+  deleteUser(user) {
     if (!confirm(`You sure you want to remove ${user.email}?`)) {
       return true;
     }
     this.registerService.deleteUser(user);
   }
 
+  logout() {
+    this.router.navigate(['/login']);
+  }
 }

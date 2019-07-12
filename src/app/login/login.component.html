@@ -1,0 +1,31 @@
+<h1>Log In</h1>
+<form [formGroup]="loginForm">
+  <div>
+    <div >
+      <label>E-mail :</label>
+      <input type="email" formControlName="email" required class="form-input">
+      <div *ngIf="values.email.invalid && (values.email.touch || values.email.dirty)">
+                    <span *ngIf="values.email.errors.required" >
+                        Email is required
+                    </span>
+        <span *ngIf="values.email.errors.email" >
+                        Email format is  incorrect
+        </span>
+      </div>
+    </div>
+
+    <div >
+      <label>Password :</label>
+      <input type="password" class="form-control" formControlName="password" required class="form-input">
+      <div *ngIf="values.password.invalid && (values.password.touch || values.password.dirty)">
+                    <span *ngIf="values.password.errors.required" >
+                        Password is required.
+                    </span>
+        <span *ngIf="values.password.errors.pattern">
+                        Password must be at least 8 character, contain latin character and numbers.
+        </span>
+      </div>
+    </div>
+  </div>
+  <input type="submit" class="button fancy-button" (click)="checkAuthentication()" style="background-color:  #1976d2; color: white" [disabled]="disabled" value="Login">
+</form>

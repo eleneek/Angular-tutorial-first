@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';
+import {log} from 'util';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
           } else {
             this.breadcrumbList.push(this.activatedRoute.firstChild.snapshot);
           }
+          console.log(this.breadcrumbList);
         }
       });
   }

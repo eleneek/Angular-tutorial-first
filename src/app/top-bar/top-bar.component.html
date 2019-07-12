@@ -4,7 +4,8 @@
 <div>
     <a [routerLink] = '["/converter"]'class = 'button fancy-button user' style="margin-right: 30px">Converter</a>
     <a [routerLink] = '["/register"]'class = 'button fancy-button user' style="margin-right: 30px">Registration</a>
-    <a [routerLink] = '["/users"]'class = 'button fancy-button user' style="margin-right: 20px">Users</a>
+  <a [routerLink] = '["/login"]'class = 'button fancy-button user' style="margin-right: 30px">Login</a>
+    <a *ngIf="allow() && ! logout()" [routerLink] = '["/users"]'class = 'button fancy-button user' style="margin-right: 20px">Users</a>
     <a [routerLink] = "['/cart']" class="button fancy-button" >
         <i class="material-icons">shopping_cart</i>
         Checkout
