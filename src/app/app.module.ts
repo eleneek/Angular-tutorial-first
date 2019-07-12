@@ -27,6 +27,9 @@ import {AuthGuard} from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import {LoginGuard} from './login.guard';
 import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
+import { EmployeeComponent } from './employee/employee.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -51,6 +54,8 @@ import { EmployeesComponent } from './employees/employees.component';
     GuardComponent,
     LoginComponent,
     EmployeesComponent,
+    EmployeeRegisterComponent,
+    EmployeeComponent,
 
 
   ],
@@ -60,6 +65,7 @@ import { EmployeesComponent } from './employees/employees.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule,
     RouterModule.forRoot( [
       {path: '' , data: {name: 'Home'}, component: ProductListComponent},
       {path: 'products/:productId',  data: {name: 'Product'}, component: ProductDetailsComponent},
@@ -78,6 +84,9 @@ import { EmployeesComponent } from './employees/employees.component';
       {path: 'admin', data: {name: 'Admin'}, canActivate: [AuthGuard], component: AdminComponent},
       {path: 'login', data: {name: 'Login'}, component: LoginComponent},
       {path: 'employees', data: {name: 'Employees'}, component: EmployeesComponent},
+      {path: 'employee/register', data: {name: 'EmployeeRegister'}, component: EmployeeRegisterComponent},
+      {path: 'employee/:employeeId', data: {name: 'Article'}, component: ArticleComponent},
+
 
     ])
   ],

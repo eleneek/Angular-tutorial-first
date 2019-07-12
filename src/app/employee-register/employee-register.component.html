@@ -1,0 +1,12 @@
+<form [formGroup]="employeesRegister">
+  <label> Name:
+    <input  type="text" formControlName="name">
+  </label>
+  <label> Salary:
+    <input  type="text" formControlName="salary">
+  </label>
+  <label> Age:
+    <input type="text" formControlName="age">
+  </label>
+  <button  type="submit" [disabled]="employeesRegister.status === 'INVALID'" (click)="RegisterEmployees(employeesRegister.value)">Register Employee</button>
+</form>

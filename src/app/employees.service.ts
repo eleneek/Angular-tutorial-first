@@ -21,7 +21,7 @@ export class EmployeesService {
     const url = `${this.host}/employees`;
     return this.httpClient.get(url)
       .pipe(map((employees: Array <IEmployee>) => {
-        const employeesTransformes = employees.map( (employee) => {
+        const employeesTransformed = employees.map( (employee) => {
           const { id, employee_name, employee_salary, employee_age } = employee;
           const employeeTransformed = {
             id,
@@ -31,7 +31,13 @@ export class EmployeesService {
           };
           return employeeTransformed;
         });
-        return employeesTransformes;
+        console.log(employeesTransformed);
+        return employeesTransformed;
       }));
+  }
+
+  RegisterEmployees(Employee: IEmployee) {
+    const url = `${this.host}/create`;
+    return this.httpClient.post<IEmployee>(url, Employee);
   }
 }

@@ -2,7 +2,9 @@
     <h1>My Store</h1>
 </a>
 <div>
-    <a [routerLink] = '["/converter"]'class = 'button fancy-button user' style="margin-right: 30px">Converter</a>
+  <a [routerLink]="['/employee/register']" class="button fancy-button user" style="margin-right: 20px;">Register Employee</a>
+  <a [routerLink]="['/employees']" class="button fancy-button user" style="margin-right: 20px;"> Employees</a>
+  <a [routerLink] = '["/converter"]'class = 'button fancy-button user' style="margin-right: 30px">Converter</a>
     <a [routerLink] = '["/register"]'class = 'button fancy-button user' style="margin-right: 30px">Registration</a>
   <a [routerLink] = '["/login"]'class = 'button fancy-button user' style="margin-right: 30px">Login</a>
     <a *ngIf="logout()" [routerLink] = '["/users"]'class = 'button fancy-button user' style="margin-right: 20px">Users</a>

@@ -8,6 +8,7 @@ import {EmployeesService} from '../employees.service';
 })
 export class EmployeesComponent implements OnInit {
   employees$;
+  p = 1;
   constructor(
     private employeesService: EmployeesService,
   ) { }
