@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import { NgModule } from '@angular/core';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -30,6 +31,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 import { EmployeeComponent } from './employee/employee.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     EmployeesComponent,
     EmployeeRegisterComponent,
     EmployeeComponent,
+    MenuComponent,
 
 
   ],
@@ -66,6 +69,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot( [
       {path: '' , data: {name: 'Home'}, component: ProductListComponent},
       {path: 'products/:productId',  data: {name: 'Product'}, component: ProductDetailsComponent},
