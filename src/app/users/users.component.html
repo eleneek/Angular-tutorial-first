@@ -1,15 +1,23 @@
-<h3>User Information</h3>
-<div  *ngFor = "let user of users" style="margin: 30px "  >
+<div >
+  <h3>User Information</h3>
+  <div  *ngFor = "let user of users" style="margin: 30px "  >
     <p>  <span>E-mail: </span> {{user.email}}</p>
     <p> <span>Nickname: </span> {{user.nickname}}</p>
     <p> <span>Phone: </span> {{user.phone}}</p>
     <p> <span>Website: </span> {{user.website}}</p>
     <p> <span>Password: </span> {{user.password}}</p>
-    <div >
-        <button id="overlay" *ngIf="mail2 === mail" (click)="deleteUser(user)" class="button fancy-button  " >
-            <i class="material-icons">delete</i>
-            Delete user
-        </button>
+    <div>
+      <button *ngIf="mail2 === mail" (click)="popUp() " class="button fancy-button  " >
+        <i class="material-icons">delete</i>
+        Delete user
+      </button>
     </div>
-  <button (click)="logout()">logout</button>
+    <div class="popUp" *ngIf="popCheck">
+      <h3>Are you sure?</h3>
+      <button (click)="deleteUser(user)">Yes</button>
+      <button (click)="popUp()">No</button>
+    </div>
+    <button (click)="logout()">logout</button>
+  </div>
 </div>
+

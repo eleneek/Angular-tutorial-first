@@ -12,6 +12,7 @@ export class EmployeeRegisterComponent implements OnInit {
 
   employees$;
   employeesRegister;
+  popCheck = false;
 
   constructor(
     private employeesService: EmployeesService,
@@ -33,5 +34,9 @@ export class EmployeeRegisterComponent implements OnInit {
     this.employeesService.RegisterEmployees(newEmployee).subscribe();
     window.alert('You were successfully registered!');
     this.router.navigate(['/employees']);
+  }
+
+  popUp() {
+    this.popCheck = !this.popCheck;
   }
 }

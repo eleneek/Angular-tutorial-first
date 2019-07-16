@@ -4,18 +4,30 @@ import {Router} from '@angular/router';
 import {LoginComponent} from '../login/login.component';
 import {LoginService} from '../login.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {colors} from '@angular/cli/utilities/color';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
+  animations: [
+    trigger( 'openClose', [
+      state( 'open', style({
+        display: 'block'
+      })),
+      state( 'close', style({
+        display: 'none'
+      })),
+
+      transition('* => *', animate('0.2s'))
+    ])
+  ]
 })
 export class UsersComponent implements OnInit {
   users = this.registerService.getusers();
   mail = this.loginComponent.Email.value;
   paddword = this.loginComponent.Password.value;
   mail2 = '';
+  popCheck = false;
   isOpen = false;
   constructor(
     private loginService: LoginService,
@@ -30,9 +42,6 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(user) {
-    if (!confirm(`You sure you want to remove ${user.email}?`)) {
-      return true;
-    }
     this.registerService.deleteUser(user);
   }
 
@@ -42,5 +51,16 @@ export class UsersComponent implements OnInit {
   }
   getMail(user) {
     this.mail2 = user.email;
+  }
+  popUp() {
+    this.popCheck = !this.popCheck;
+  }
+
+  showMenu() {
+    this.isOpen = true;
+  }
+
+  hideMenu() {
+    this.isOpen = false;
   }
 }

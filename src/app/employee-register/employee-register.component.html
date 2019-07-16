@@ -8,5 +8,10 @@
   <label> Age:
     <input type="text" formControlName="age">
   </label>
-  <button type="submit" [disabled]="employeesRegister.status === 'INVALID'" (click)="RegisterEmployees(employeesRegister.value)">Register Employee</button>
+  <button type="submit" [disabled]="employeesRegister.status === 'INVALID'" (click)=" popUp()">Register Employee</button>
 </form>
+<div class="popUp" *ngIf="popCheck">
+  <h3>Are you sure?</h3>
+  <button (click)="RegisterEmployees(employeesRegister.value)">Yes</button>
+  <button (click)="popUp()">No</button>
+</div>
