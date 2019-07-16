@@ -35,4 +35,8 @@ describe('Cart Service tests', () => {
     cartService.remove(product);
     expect(cartService.getitems()).toEqual(cartService.items);
   });
+  it('Method clearItem should clear specific item from cart array', () => {
+    cartService.addToCart(product);
+    expect(cartService.check(product)).toBe(true);
+  });
 });
