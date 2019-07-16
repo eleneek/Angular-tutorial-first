@@ -26,7 +26,7 @@ describe('Testing Wishlist Service', () => {
     expect(wishService.check(1)).toBe(true);
   });
 
-  it('Method remove should remove item to wishlist with id', () => {
+  it('Method remove should remove item from wishlist', () => {
     wishService.add({ product: 'abc' }, 1);
     wishService.remove(1);
     expect(wishService.check(1)).toBe(false);
