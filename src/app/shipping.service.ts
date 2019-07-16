@@ -12,7 +12,7 @@ export class ShippingService {
   ) { }
 
   getShippingPrices() {
-    return this.http.get('/assets/shipping.json')
+    return this.http.get('/assets/shipping.json');
   }
   getType() {
     return this.type;
