@@ -16,7 +16,7 @@ describe('Testing Wishlist Service', () => {
   });
 
   it('Method add should add item to wishlist', () => {
-    wishService.add({ product: 'abc' }, 1);
+    wishService.add({ product: true }, 1);
     expect(wishService.wishList[0].product).toBe(true);
     expect(wishService.wishList[0].id).toBe(1);
   });

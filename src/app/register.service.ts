@@ -6,7 +6,6 @@ import {Injectable} from '@angular/core';
 export class RegisterService {
     users = [];
     passwords = [];
-    loginStatus;
     constructor(
     ) {}
 
@@ -17,15 +16,12 @@ export class RegisterService {
     getusers() {
         return this.users;
     }
-    getpasswords() {
-      return this.passwords;
-    }
     check(user) {
         return this.users.includes(user);
     }
 
     deleteUser(user) {
         this.users.splice(this.users.indexOf(user), 1);
-        this.users.splice(this.passwords.indexOf(user), 1);
+        this.passwords.splice(this.passwords.indexOf(user), 1);
     }
 }
