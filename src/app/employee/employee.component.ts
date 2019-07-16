@@ -2,15 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {EmployeesService} from '../employees.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.scss']
+  styleUrls: ['./employee.component.scss'],
 })
 export class EmployeeComponent implements OnInit {
   currentEmployee;
   employeesUpdate;
+
 
   constructor(
     private formBuilder: FormBuilder,

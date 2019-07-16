@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-employee-register',
   templateUrl: './employee-register.component.html',
-  styleUrls: ['./employee-register.component.scss']
+  styleUrls: ['./employee-register.component.scss'],
 })
 export class EmployeeRegisterComponent implements OnInit {
 
@@ -34,5 +34,4 @@ export class EmployeeRegisterComponent implements OnInit {
     window.alert('You were successfully registered!');
     this.router.navigate(['/employees']);
   }
-
 }

@@ -34,6 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MenuComponent } from './menu/menu.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { MenuComponent } from './menu/menu.component';
     EmployeeRegisterComponent,
     EmployeeComponent,
     MenuComponent,
+
 
 
   ],

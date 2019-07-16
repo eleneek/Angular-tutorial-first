@@ -3,17 +3,20 @@ import { RegisterService } from '../register.service';
 import {Router} from '@angular/router';
 import {LoginComponent} from '../login/login.component';
 import {LoginService} from '../login.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {colors} from '@angular/cli/utilities/color';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
   users = this.registerService.getusers();
   mail = this.loginComponent.Email.value;
   paddword = this.loginComponent.Password.value;
   mail2 = '';
+  isOpen = false;
   constructor(
     private loginService: LoginService,
     private loginComponent: LoginComponent,
